@@ -1,154 +1,126 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Righteous&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-:root{
---primary-color: #000000;
---secondary-color: #ffffff;
-}
-body{
-    height: 100vh;
-    background:linear-gradient(to right, #4b0c5e, #5c0fc0);
-    display: flex;
-    flex-direction: column;
-    font-family: "Montserrat", cursive;
+
+:root {
+    --primary-color: #000000;
+    --secondary-color: #ffffff;
 }
 
-.container{
-    height: 100%;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    width: 90vw;
+body {
+    height: 100vh;
+    background: linear-gradient(to right, #4b0c5e, #5c0fc0);
+    display: flex;
+    flex-direction: column;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 480px;
     margin: auto;
 }
-header{
-    margin-top: 70px;
+
+header {
+    margin-top: 20px;
 }
-.nickname{
+
+.nickname {
     color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
-header a{
-    grid-column: 1/-1;
+
+header a {
     display: flex;
     align-items: center;
-    gap: 16px;
+    justify-content: center;
+    gap: 10px;
     text-decoration: none;
     color: var(--secondary-color);
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
-main{
-    flex-grow: 1;
-}
-.title{
-    position: relative;
-    grid-column: 1/-1;
-    place-self: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.title_text{
-    margin-top: 10px;
-    font-size: 10.9vw;
-    color: #a3a3a3a4;
 
+.title {
+    margin-top: 40px;
 }
-.title_transparent{
-position: absolute;
-top: -40%;
-font-size: 13vw;
-color: rgba(255, 255, 255, 0.63);
-z-index: -1;
+
+.title_text {
+    font-size: 12vw;
+    color: #a3a3a3a4;
+    font-weight: bold;
 }
-.description{
-    padding-top: 40px;
-    grid-column: 1/7;
-    place-self: start;
+
+.title_transparent {
+    font-size: 14vw;
+    color: rgba(255, 255, 255, 0.63);
+    z-index: -1;
+}
+
+.description {
+    padding-top: 20px;
     color: var(--secondary-color);
-    z-index: 1;
-}
-.description_title{
-    font-size:2rem;
-    margin-top: -20px;
-    font-size: 100;
-}
-.description_text{
-    width: 500px;
     font-size: 1.2rem;
 }
 
-.action{
-    grid-column: 7/-1;
-    place-self: start end;
-    height: 80px;
-    width: 360px;
-    margin-left: 200px;
-    margin-top: 50px;
+.description_title {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.description_text {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.action {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 30px auto;
+    padding: 15px;
     color: #ffffff;
     background: linear-gradient(to right, #158fd6, #1666c2);
-    font-size: 2.3rem;
-    border-radius: 35px;
+    font-size: 1.5rem;
+    border-radius: 30px;
     text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
+    text-align: center;
+    font-weight: bold;
 }
-.footer_text{
-    grid-column: 1/-1;
-    place-self: center;
-    margin-bottom: -70px;
+
+.pikachu-image {
+    width: 80%;
+    max-width: 280px;
+    margin: 30px auto;
+    display: block;
+}
+
+.footer_text {
+    margin-top: 20px;
     color: rgb(150, 146, 146);
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
-.pikachu-image{
-    height: 380px;
-    width: 380px;
-    margin-top: -300px;
-    margin-left: 1100px;
-    transform: translate(-50%, -50%);
-}
-@media(max-widht: 960px){
-    .container{
-        grid-template-columns: 1fr;
+
+/* Responsividade para telas maiores */
+@media (min-width: 768px) {
+    .container {
+        max-width: 600px;
     }
-    header{
-        margin-top: 30px;
+    .title_text {
+        font-size: 10vw;
     }
-    .title{
-        place-self: start center;
-        transform: TranslateY(20%);
+    .description {
+        font-size: 1.4rem;
     }
-    .action{
-        grid-column: 1;
-        grid-row: 2;
-        place-self: end center;
-        margin-bottom: 24px;
+    .action {
+        font-size: 1.8rem;
     }
-    footer{
-        display: none;
-    }
-}
-@media(max-widht:640px){
-    .description_title{   
-    font-size: 10vw;
-}
-.description_text{
-    display: none;
-}
-.action{
-    width: 100%;
-    font-size: 10vw;
-}
-.pikachu-image{
-    width: 90vw;
-}
-.morango-icon{
-    width: 92px;
-    height: 92px;
-}
 }
